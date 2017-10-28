@@ -1,0 +1,56 @@
+<html>
+<head>
+<style type="text/css">
+td { border:solid 1px #000000;text-align:center; }
+table{ border-collapse:collapse;margin: 0px; }
+.button{ border:solid 1px #000000;background:#aaeecc; }
+.bm{ height:20;width:20;border:solid 1px #dddddd;background:#dddddd;text-align:center; }
+.tm{ height:20;width:20;border:solid 1px #ffffff;background:#ffffff;text-align:center; }
+.nm{ height:20;width:20;border:solid 1px #dddddd;background:#dddddd;text-align:center; }
+</style>
+<script type="text/javascript" src="./calendar.js">
+</script>
+
+</head>
+<body onload="getCalendar(clientyear,clientmonth,clientdate,clientyoubi,sdiv)">
+
+<form name="op">
+<input type="hidden" name="opid" size="5" value="sdiv">
+<input type="hidden" name="by">
+<input type="hidden" name="bm">
+<input type="hidden" name="bd">
+<input type="hidden" name="byo">
+<input type="hidden" name="y">
+<input type="hidden" name="m">
+<input type="hidden" name="d">
+<input type="hidden" name="yo">
+<input type="hidden" name="ny">
+<input type="hidden" name="nm">
+<input type="hidden" name="nd">
+<input type="hidden" name="nyo">
+<input type="hidden" name="bby">
+<input type="hidden" name="bbm">
+<input type="hidden" name="bbd">
+<input type="hidden" name="bbyo">
+<input type="hidden" name="nny">
+<input type="hidden" name="nnm">
+<input type="hidden" name="nnd">
+<input type="hidden" name="nnyo"><br>
+<input type="text" name="selectday" size="10"><br>
+</form>
+
+<div id="sdiv" style="height:200px;width:200px;"></div>
+
+<script type="text/javascript">
+<!--
+	//基準日(クライアントで設定された今日の日付)
+	var today = new Date();
+	var clientyear =  today.getFullYear();
+	var clientmonth = (today.getMonth()+1);
+	var clientdate = today.getDate();
+	var clientyoubi = today.getDay();
+
+//-->
+</script>
+</body>
+</html>

@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+	<form-beans>
+		<!-- 登陆Form -->
+		<form-bean name="venditionLoginForm"
+			type="vendition.message.form.VenditionLoginForm" />
+
+		<form-bean name="venditionPageNeedForm"
+			type="vendition.message.form.VenditionPageNeedForm" />
+
+		<form-bean name="venditionQryWareMsgForm"
+			type="vendition.message.form.VenditionQryWareMsgForm" />
+
+		<form-bean name="venditionCreWareMsgForm"
+			type="vendition.message.form.VenditionCreWareMsgForm" />
+
+		<form-bean name="venditionUpWareMsgForm"
+			type="vendition.message.form.VenditionUpWareMsgForm" />
+
+		<form-bean name="venditionQryServeMsgForm"
+			type="vendition.message.form.VenditionQryServeMsgForm" />
+
+		<form-bean name="venditionCreServeMsgForm"
+			type="vendition.message.form.VenditionCreServeMsgForm" />
+
+		<form-bean name="venditionUpServeMsgForm"
+			type="vendition.message.form.VenditionUpServeMsgForm" />
+
+		<form-bean name="venditionQryClientMsgForm"
+			type="vendition.message.form.VenditionQryClientMsgForm" />
+
+		<form-bean name="venditionUpClientMsgForm"
+			type="vendition.message.form.VenditionUpClientMsgForm" />
+
+		<form-bean name="venditionCreClientMsgForm"
+			type="vendition.message.form.VenditionCreClientMsgForm" />
+
+		<form-bean name="venditionQryStockMsgForm"
+			type="vendition.message.form.VenditionQryStockMsgForm" />
+
+		<form-bean name="venditionCreStockMsgForm"
+			type="vendition.message.form.VenditionCreStockMsgForm" />
+
+		<form-bean name="venditionQrySellMsgForm"
+			type="vendition.message.form.VenditionQrySellMsgForm" />
+
+		<form-bean name="venditionCreSellMsgForm"
+			type="vendition.message.form.VenditionCreSellMsgForm" />
+
+		<form-bean name="venditionQryReperForm"
+			type="vendition.message.form.VenditionQryReperForm" />
+	</form-beans>
+	<action-mappings>
+		<!-- 登陆Action -->
+		<action name="venditionLoginForm" path="/venditionLoginAction"
+			scope="request"
+			type="vendition.message.action.VenditionLoginAction">
+			<forward name="errorpage" path="/VenditionLoginJsp.jsp" />
+			<forward name="done" path="/JSP/VenditionHomeJsp.jsp" />
+		</action>
+		<action name="venditionPageNeedForm"
+			path="/venditionPageNeedAction" scope="session"
+			type="vendition.message.action.VenditionPageNeedAction">
+			<forward name="errorpage" path="/errorpage.jsp" />
+			<forward name="chdone" path="/JSP/VenditionHomeJsp.jsp" />
+		</action>
+
+		<action name="venditionQryWareMsgForm"
+			path="/venditionQryWareMsgAction" scope="session" parameter="method"
+			type="vendition.message.action.VenditionQryWareMsgAction">
+			<forward name="errorpage" path="/errorpage.jsp" />
+			<forward name="qrydone" path="/JSP/VenditionHomeJsp.jsp" />
+			<forward name="credone" path="/JSP/VenditionHomeJsp.jsp" />
+			<forward name="deldone"
+				path="/venditionQryWareMsgAction.do?method=qryWareMsg" />
+			<forward name="updone" path="/JSP/VenditionHomeJsp.jsp" />
+		</action>
+
+		<action name="venditionCreWareMsgForm"
+			path="/venditionCreWareMsgAction" scope="request" parameter="method"
+			type="vendition.message.action.VenditionCreWareMsgAction">
+			<forward name="errorpage" path="/errorpage.jsp" />
+			<forward name="credone"
+				path="/venditionQryWareMsgAction.do?method=qryWareMsg" />
+			<forward name="backnow"
+				path="/venditionQryWareMsgAction.do?method=qryWareMsg" />
+		</action>
+
+		<action name="venditionUpWareMsgForm"
+			path="/venditionUpWareMsgAction" scope="request" parameter="method"
+			type="vendition.message.action.VenditionUpWareMsgAction">
+			<forward name="errorpage" path="/errorpage.jsp" />
+			<forward name="updone"
+				path="/venditionQryWareMsgAction.do?method=qryWareMsg" />
+			<forward name="backnow"
+				path="/venditionQryWareMsgAction.do?method=qryWareMsg" />
+		</action>
+
+		<action name="venditionQryServeMsgForm"
+			path="/venditionQryServeMsgAction" scope="session" parameter="method"
+			type="vendition.message.action.VenditionQryServeMsgAction">
+			<forward name="errorpage" path="/errorpage.jsp" />
+			<forward name="qrydone" path="/JSP/VenditionHomeJsp.jsp" />
+			<forward name="credone" path="/JSP/VenditionHomeJsp.jsp" />
+			<forward name="deldone"
+				path="/venditionQryServeMsgAction.do?method=qryServeMsg" />
+			<forward name="updone" path="/JSP/VenditionHomeJsp.jsp" />
+		</action>
+
+		<action name="venditionCreServeMsgForm"
+			path="/venditionCreServeMsgAction" scope="request" parameter="method"
+			type="vendition.message.action.VenditionCreServeMsgAction">
+			<forward name="errorpage" path="/errorpage.jsp" />
+			<forward name="credone"
+				path="/venditionQryServeMsgAction.do?method=qryServeMsg" />
+			<forward name="backnow"
+				path="/venditionQryServeMsgAction.do?method=qryServeMsg" />
+		</action>
+
+		<action name="venditionUpServeMsgForm"
+			path="/venditionUpServeMsgAction" scope="request" parameter="method"
+			type="vendition.message.action.VenditionUpServeMsgAction">
+			<forward name="errorpage" path="/errorpage.jsp" />
+			<forward name="updone"
+				path="/venditionQryServeMsgAction.do?method=qryServeMsg" />
+			<forward name="backnow"
+				path="/venditionQryServeMsgAction.do?method=qryServeMsg" />
+		</action>
+
+		<action name="venditionQryClientMsgForm"
+			path="/venditionQryClientMsgAction" scope="session"
+			parameter="method"
+			type="vendition.message.action.VenditionQryClientMsgAction">
+			<forward name="errorpage" path="/errorpage.jsp" />
+			<forward name="qrydone" path="/JSP/VenditionHomeJsp.jsp" />
+			<forward name="credone" path="/JSP/VenditionHomeJsp.jsp" />
+			<forward name="deldone"
+				path="/venditionQryClientMsgAction.do?method=qryClientMsg" />
+			<forward name="updone" path="/JSP/VenditionHomeJsp.jsp" />
+		</action>
+
+		<action name="venditionCreClientMsgForm"
+			path="/venditionCreClientMsgAction" scope="request"
+			parameter="method"
+			type="vendition.message.action.VenditionCreClientMsgAction">
+			<forward name="errorpage" path="/errorpage.jsp" />
+			<forward name="credone"
+				path="/venditionQryClientMsgAction.do?method=qryClientMsg" />
+			<forward name="backnow"
+				path="/venditionQryClientMsgAction.do?method=qryClientMsg" />
+		</action>
+
+		<action name="venditionUpClientMsgForm"
+			path="/venditionUpClientMsgAction" scope="request" parameter="method"
+			type="vendition.message.action.VenditionUpClientMsgAction">
+			<forward name="errorpage" path="/errorpage.jsp" />
+			<forward name="updone"
+				path="/venditionQryClientMsgAction.do?method=qryClientMsg" />
+			<forward name="backnow"
+				path="/venditionQryClientMsgAction.do?method=qryClientMsg" />
+		</action>
+
+		<action name="venditionQryStockMsgForm"
+			path="/venditionQryStockMsgAction" scope="session" parameter="method"
+			type="vendition.message.action.VenditionQryStockMsgAction">
+			<forward name="errorpage" path="/errorpage.jsp" />
+			<forward name="qrydone" path="/JSP/VenditionHomeJsp.jsp" />
+			<forward name="credone" path="/JSP/VenditionHomeJsp.jsp" />
+			<forward name="deldone"
+				path="/venditionQryClientMsgAction.do?method=qryClientMsg" />
+			<forward name="updone" path="/JSP/VenditionHomeJsp.jsp" />
+		</action>
+
+		<action name="venditionCreStockMsgForm"
+			path="/venditionCreStockMsgAction" scope="session" parameter="method"
+			type="vendition.message.action.VenditionCreStockMsgAction">
+			<forward name="errorpage" path="/errorpage.jsp" />
+			<forward name="changenow"
+				path="/venditionQryStockMsgAction.do?method=creStockMsg" />
+			<forward name="backnow"
+				path="/venditionQryStockMsgAction.do?method=qryStockMsg" />
+			<forward name="sumnow"
+				path="/venditionCreStockMsgAction.do?method=changeStockMsg" />
+			<forward name="credone"
+				path="/venditionQryStockMsgAction.do?method=qryStockMsg" />
+		</action>
+
+		<action name="venditionQrySellMsgForm"
+			path="/venditionQrySellMsgAction" scope="session" parameter="method"
+			type="vendition.message.action.VenditionQrySellMsgAction">
+			<forward name="errorpage" path="/errorpage.jsp" />
+			<forward name="qrydone" path="/JSP/VenditionHomeJsp.jsp" />
+			<forward name="credone" path="/JSP/VenditionHomeJsp.jsp" />
+			<forward name="deldone"
+				path="/venditionQryClientMsgAction.do?method=qryClientMsg" />
+			<forward name="updone" path="/JSP/VenditionHomeJsp.jsp" />
+		</action>
+
+		<action name="venditionCreSellMsgForm"
+			path="/venditionCreSellMsgAction" scope="session" parameter="method"
+			type="vendition.message.action.VenditionCreSellMsgAction">
+			<forward name="errorpage" path="/errorpage.jsp" />
+			<forward name="changenow"
+				path="/venditionQrySellMsgAction.do?method=creStockMsg" />
+			<forward name="backnow"
+				path="/venditionQrySellMsgAction.do?method=qryStockMsg" />
+			<forward name="sumnow"
+				path="/venditionCreSellMsgAction.do?method=changeStockMsg" />
+			<forward name="credone"
+				path="/venditionQrySellMsgAction.do?method=qryStockMsg" />
+		</action>
+
+		<action name="venditionQryReperForm"
+			path="/venditionQryReperAction" scope="session" parameter="method"
+			type="vendition.message.action.VenditionQryReperAction">
+			<forward name="errorpage" path="/errorpage.jsp" />
+			<forward name="qrydone" path="/JSP/VenditionHomeJsp.jsp" />
+		</action>
+	</action-mappings>
+	<message-resources
+		parameter="com.yourcompany.struts.ApplicationResources" />
+</struts-config>
+
